@@ -12,7 +12,7 @@
         }
         host = host + ':' + forceSsl.https_port;
       }
-      return res.redirect(['https://', host, req.originalUrl].join(''));
+      return res.redirect(['https://', host, req.originalUrl].join(''), 301);
     }
     return next();
   };
