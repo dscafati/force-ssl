@@ -6,7 +6,7 @@ forceSsl = (req, res, next) ->
       if colonidx != -1
         host = host.slice(0, colonidx)
       host = host + ':' + forceSsl.https_port
-    return res.redirect ['https://', host, req.originalUrl].join('')
+    return res.redirect ['https://', host, req.originalUrl].join('') 301
   return next()
 
 forceSsl.https_port = null
